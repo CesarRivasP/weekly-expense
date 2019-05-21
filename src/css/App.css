@@ -40,7 +40,7 @@ header h1 {
   font-weight: normal;
 }
 
-#gastos {
+.gastos {
   margin-bottom: 30px;
 }
 
@@ -126,6 +126,7 @@ h2 {
 
 .gastos-realizados li p .gasto {
   background-color: #004085;
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 6px;
   color:white;
 }
