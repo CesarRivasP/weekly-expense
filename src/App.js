@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import Form from './components/form';
 import List from './components/list';
+import { budgetValidation } from './helpers/helpers';
 import './css/App.css';
 
 class App extends Component {
@@ -10,6 +11,31 @@ class App extends Component {
     budget: '',
     remaining: '',
     spendings: {}
+  }
+
+  componentDidMount(){
+    this.getBudget();
+  }
+
+  getBudget = () => {
+    let budget = prompt('Cual es tu presupuesto');
+
+    let result = budgetValidation(budget);
+
+    if(result){
+      // console.log('Valido');
+
+      this.setState({
+        budget: result,
+        remaining: result
+      })
+    }
+    else {
+      // console.log('NO valido');
+
+      // Hasta que alla un presupuesto valido no va a dejar de caer en esta funcion
+      this.getBudget()
+    }
   }
 
   addSpending = (spending) => {
