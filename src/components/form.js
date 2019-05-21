@@ -27,10 +27,10 @@ class Form extends Component {
     const spending = {
       spendingName: this.spendingNameRef.current.value,
       quantitySpending: this.quantitySpendingRef.current.value
-    }
+    };
     console.log(spending);
     // agregarlo y enviarlo por props
-
+    this.props.addSpending(spending); //asi se comunica con el componente principal
     // resetear el formulario
     e.currentTarget.reset();
   }
