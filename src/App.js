@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import Form from './components/form';
 import List from './components/list';
+import BudgetControl from './components/budget-control.js';
 import { budgetValidation } from './helpers/helpers';
 import './css/App.css';
 
@@ -62,6 +63,7 @@ class App extends Component {
             </div>
             <div className="one-half column">
               <List spendings={this.state.spendings} />
+              <BudgetControl budget={this.state.budget} remaining={this.state.remaining}/>
             </div>
           </div>
         </div>
