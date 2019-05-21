@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -56,6 +57,9 @@ class Form extends Component {
       </form>
     );
   }
+}
+Form.propTypes = {
+  addSpending: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(Form);
