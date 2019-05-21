@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
-class Budget extends Component {
-  render(){
-    return (
-      <div className="alert alert-primary">
-        Presupuesto: $ {this.props.budget}
-      </div>
-    );
-  }
+const Budget = (props) => {
+  const { budget } = props;
+  return (
+    <div className="alert alert-primary">
+      Presupuesto: $ { budget }
+    </div>
+  );
 }
 
 Budget.propTypes = {

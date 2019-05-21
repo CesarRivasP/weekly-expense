@@ -4,10 +4,11 @@ import Budget from './budget';
 import Remaining from './remaining';
 
 const BudgetControl = (props) => {
+  const { budget, remaining} = props;
   return (
     <React.Fragment>
-      <Budget budget={props.budget} />
-      <Remaining budget={props.budget} remaining={props.remaining}/>
+      <Budget budget={ budget } />
+      <Remaining budget={ budget } remaining={ remaining }/>
     </React.Fragment>
   )
 }
