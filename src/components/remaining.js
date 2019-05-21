@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { reviewBudget } from '../helpers/helpers';
 
 const Remaining = (props) => {
@@ -10,6 +11,11 @@ const Remaining = (props) => {
         Restante: $ {props.remaining}
       </div>
     );
+}
+
+Remaining.propTypes = {
+  remaining: PropTypes.number.isRequired,
+  budget: PropTypes.number.isRequired
 }
 
 export default Remaining;

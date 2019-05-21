@@ -58,6 +58,7 @@ class Form extends Component {
     );
   }
 }
+
 Form.propTypes = {
   addSpending: PropTypes.func.isRequired
 }

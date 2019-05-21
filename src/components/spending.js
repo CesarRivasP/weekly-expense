@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Spending extends Component {
   render(){
@@ -6,12 +7,16 @@ class Spending extends Component {
     return (
       <li className="gastos">
         <p>
-          {spendingName}
+           <strong>{spendingName}</strong>
           <span className="gasto">$ {quantitySpending}</span>
         </p>
       </li>
     );
   }
+}
+
+Spending.propTypes = {
+  spendings: PropTypes.object.isRequired
 }
 
 export default Spending;
