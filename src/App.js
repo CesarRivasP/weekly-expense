@@ -79,7 +79,7 @@ class App extends Component {
             </div>
             <div className="one-half column">
               <List spendings={this.state.spendings} />
-              <BudgetControl budget={this.state.budget} remaining={this.state.remaining}/>
+              <BudgetControl budget={Number(this.state.budget)} remaining={Number(this.state.remaining)} />
             </div>
           </div>
         </div>
