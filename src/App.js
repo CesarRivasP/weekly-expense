@@ -33,7 +33,6 @@ class App extends Component {
     }
     else {
       // console.log('NO valido');
-
       // Hasta que alla un presupuesto valido no va a dejar de caer en esta funcion
       this.getBudget()
     }
@@ -46,10 +45,27 @@ class App extends Component {
     // agregar el gasto al state
     spendings[`spending${Date.now()}`] = spending;  //de esta forma se pueden crear muchos gastos, puesto que se le
     // añade la fecha a cada uno de ellos
-    console.log(spendings);
+    // console.log(spendings);
+
+    this.subtractBudget(spending.quantitySpending)
 
     // ponerlo en state
     this.setState({ spendings });
+  }
+
+  // Restar del presupuesto cuando un gasto se crea
+  subtractBudget = (quantity) => {
+    // leer gasto
+    // console.log(`El gasto agregado mas ${quantity}`);
+    let subtract = Number(quantity);
+
+    // Realizar copia del state
+    let remaining = this.state.remaining;
+
+    // Restamos
+    remaining -= subtract;
+    // Agregamos el nuevo state
+    this.setState({ remaining })
   }
 
   render(){
