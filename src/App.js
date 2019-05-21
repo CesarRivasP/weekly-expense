@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header';
 import Form from './components/form';
+import List from './components/list';
 import './css/App.css';
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
               <Form addSpending={this.addSpending} />
             </div>
             <div className="one-half column">
-
+              <List spendings={this.state.spendings} />
             </div>
           </div>
         </div>
