@@ -14,12 +14,14 @@ class App extends Component {
   addSpending = (spending) => {
     // tomar una copia del state actual
     const spendings = { ...this.state.spendings };
-    console.log(spendings);
 
     // agregar el gasto al state
-    this.setState({ spendings: spending });
-    console.log(this.state.spendings);
+    spendings[`spending${Date.now()}`] = spending;  //de esta forma se pueden crear muchos gastos, puesto que se le
+    // añade la fecha a cada uno de ellos
+    console.log(spendings);
+
     // ponerlo en state
+    this.setState({ spendings });
   }
 
   render(){
