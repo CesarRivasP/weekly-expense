@@ -4,6 +4,24 @@ import Form from './components/form';
 import './css/App.css';
 
 class App extends Component {
+
+  state = {
+    budget: '',
+    remaining: '',
+    spendings: {}
+  }
+
+  addSpending = (spending) => {
+    // tomar una copia del state actual
+    const spendings = { ...this.state.spendings };
+    console.log(spendings);
+
+    // agregar el gasto al state
+    this.setState({ spendings: spending });
+    console.log(this.state.spendings);
+    // ponerlo en state
+  }
+
   render(){
     return (
       <div className="App container">
@@ -11,7 +29,7 @@ class App extends Component {
         <div className="contenido-principal contenido">
           <div className="row">
             <div className="one-half column">
-              <Form />
+              <Form addSpending={this.addSpending} />
             </div>
             <div className="one-half column">
 
